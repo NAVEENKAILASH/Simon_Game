@@ -51,3 +51,20 @@ body {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }
+
+.start-button {
+  margin: 25px;
+  display: inline-block;
+  height: 100px;
+  width: 200px;
+  border: 10px solid black;
+  font-family: cursive;
+  font-size: large;
+  font-weight: 700;
+  cursor: pointer;
+
+  @media (min-width: 1100px) {
+    display: none;
+  }
+
+}
