@@ -16,20 +16,22 @@ $(document).keydown( function(event) {
     nextSequence();
     started = true;
   }
-})
+});
+
+$(".start-button").click(() => {
+  if (!started) {
+    nextSequence();
+    started = true;
+  }
+});
 
 
 $(".btn").on("click" , function() {
 
   var userChosenColour = $(this).attr("id");
   userClickedPattern.push(userChosenColour);
-  console.log(userClickedPattern);
   playSound(userChosenColour);
   animatePress(userChosenColour);
-  
-
-
-
   check(userClickedPattern.length - 1);
 
 });
@@ -44,14 +46,11 @@ function nextSequence() {
     var randomNumber = Math.floor(Math.random() * 4 );
     randomChosenColour = buttonColours[randomNumber];
     gamePattern.push(randomChosenColour);
-    console.log(gamePattern);
 
     $("#"+ randomChosenColour).fadeOut(100).fadeIn(100);
     animatePress(randomChosenColour);
     playSound(randomChosenColour);
 
-   
-    
   }
 }
 
@@ -97,17 +96,3 @@ function animatePress (currentColour) {
   } , 100);
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
